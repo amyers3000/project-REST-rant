@@ -3,9 +3,12 @@ const express = require('express')
 const placesRoutes = require('./controllers/places')
 const app = express()
 
-
+// middleware
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+
+// middleware
+app.use(express.static('public'))
 
 app.use('/places', placesRoutes)
 
