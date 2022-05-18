@@ -9,6 +9,7 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 // middleware
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
 
 app.use('/places', placesRoutes)
 
