@@ -11,7 +11,7 @@ h1 {
   main{
       margin-right:20px;
       margin-left: 20px;
-      
+
   }
   html, body {
     height: 100%;
@@ -28,31 +28,7 @@ h1 {
     height: 50px;
     background-color: #4D2121;
   }
-  /* Nav */
-  nav {
-    background-color: #4D2121;
-    padding: 10px;
-}
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-}
-
-nav li {
-    display: inline;
-    margin-right: 25px;
-}
-
-nav a {
-    color: white;
-    font-size: 1.5em;
-}
-
-nav a:hover {
-    color: pink;
-    text-decoration: none;
-}
 
   /* Home Page */
   /* Getting Bootstrap Cards Aligned */
