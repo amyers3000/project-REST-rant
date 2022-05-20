@@ -1,12 +1,18 @@
+/* Default Page CSS */
 h1 {
     text-align: center;
     color: #000202;
   }
   body{
-      background-color: #E8ECED
-      ;
+      background-color: #E8ECED;
+      text-align: center;
+      
   }
-
+  main{
+      margin-right:20px;
+      margin-left: 20px;
+      
+  }
   html, body {
     height: 100%;
     margin: 0;
@@ -14,8 +20,7 @@ h1 {
   .wrapper {
     min-height: 100%;
   
-    /* Equal to height of footer */
-    /* But also accounting for potential margin-bottom of last child */
+    
     margin-bottom: -50px;
   }
   .footer,
@@ -23,8 +28,34 @@ h1 {
     height: 50px;
     background-color: #4D2121;
   }
-  
-  
+  /* Nav */
+  nav {
+    background-color: #4D2121;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: white;
+    font-size: 1.5em;
+}
+
+nav a:hover {
+    color: pink;
+    text-decoration: none;
+}
+
+  /* Home Page */
+  /* Getting Bootstrap Cards Aligned */
 .container-home{
     margin: auto;
     text-align: center;
@@ -51,7 +82,7 @@ h1 {
     background-color: #D19E75
     ;
 }
-
+/*  Form Page */
 form{
     width: 50%;
     margin: auto;
