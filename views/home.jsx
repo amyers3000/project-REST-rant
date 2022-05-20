@@ -7,13 +7,13 @@ function home (){
         <main>
             <h1>REST-Rant</h1>
             <div id='img-home'>
-                <img className='rounded mx-auto d-block' width={600} id = 'main' src='/images/home.jpg' alt='Chia Fruit Shake'/>
+                <img className='rounded mx-auto d-block .img-fluid' width={500} id = 'main' src='/images/home.jpg' alt='Chia Fruit Shake'/>
                 <div className='text-center'>
                     Photo by <a href='https://unsplash.com/@markuswinkler'>Markus Winkler</a> on <a href='https://unsplash.com/photos/-fRAIQHKcc0'>Unsplash</a>
                 </div>
             </div>
-            <div className='row container-home'>
-                <div className='col-xs-6 box' id='places'>
+            <div className='row justify-content-md-center'>
+                <div className='col-md-6 box' id='places'>
                     <div className='card'>
                     <div className='card-body'>
                         <img src='/images/review.jpg' className='card-img-top home-pic' alt='reviewer'/>
@@ -23,7 +23,7 @@ function home (){
                     </div>
                     </div>
                 </div>
-                <div className='col-xs-6 box' id='add'>
+                <div className='col-md-6 box' id='add'>
                     <div className='card'>
                     <div className='card-body'>
                         <img src='/images/New-Places.jpg' className='card-img-top home-pic' alt='Open sign'/>

@@ -5,7 +5,7 @@ function show (data) {
     return (
         <Def>
             <main>
-                <div className="card container-home" style={{width: 800}}>
+                <div className="card mx-auto " style={{width: 800}}>
                     <img src={data.place.pic} className="card-img-top" alt={data.place.name}/>
                     <div className="card-body">
                         <h5 className="card-title">{data.place.name}</h5>

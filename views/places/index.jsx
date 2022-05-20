@@ -4,9 +4,9 @@ const Def = require('../default')
 function index (data) {
     let placesFormatted = data.places.map((place, index) => {
       return (
-        <div className='col-sm-6'>
+        <div className='col-xl-6'>
           <h2 className='text-center'>
-            <a href={`/places/${index}`}> 
+            <a className='link-dark' href={`/places/${index}`}> 
               {place.name}
             </a>
           </h2>
@@ -24,7 +24,7 @@ function index (data) {
       <Def>
           <main>
               <h1 className>Places to Rant and Rave About</h1>
-                <div className='row'>
+                <div className='row justify-content-md-center'>
                 {placesFormatted}
                 </div>
           </main>
