@@ -13,23 +13,23 @@ function home (){
                 </div>
             </div>
             <div className='row container-home'>
-                <div className='col-sm-6 box' id='places'>
+                <div className='col-xs-6 box' id='places'>
                     <div className='card'>
                     <div className='card-body'>
-                        <img src='/images/review.jpg' class='card-img-top home-pic' alt='reviewer'/>
+                        <img src='/images/review.jpg' className='card-img-top home-pic' alt='reviewer'/>
                         <h5 className='card-title'>Places to Rant About</h5>
                         <p className='card-text'>A list of various restaurants that includes locations and reviews</p>
                         <a href='/places' class='btn  btn-dark'>View List</a>
                     </div>
                     </div>
                 </div>
-                <div className='col-sm-6 box' id='add'>
+                <div className='col-xs-6 box' id='add'>
                     <div className='card'>
                     <div className='card-body'>
-                        <img src='/images/New-Places.jpg' class='card-img-top home-pic' alt='Open sign'/>
+                        <img src='/images/New-Places.jpg' className='card-img-top home-pic' alt='Open sign'/>
                         <h5 className='card-title'>More to Rant?</h5>
                         <p className='card-text'> Add more restaurants to the ever growing list - share your experience!</p>
-                        <a href='/places/new' class='btn  btn-dark'>Add Place</a>
+                        <a href='/places/new' className='btn  btn-dark'>Add Place</a>
                     </div>
                     </div>
                 </div>

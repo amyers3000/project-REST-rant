@@ -5,19 +5,19 @@ function show (data) {
     return (
         <Def>
             <main>
-                <div class="card container-home" style={{width: 800}}>
-                    <img src={data.place.pic} class="card-img-top" alt={data.place.name}/>
-                    <div class="card-body">
-                        <h5 class="card-title">{data.place.name}</h5>
-                        <p class="card-text">Rating: None</p>
+                <div className="card container-home" style={{width: 800}}>
+                    <img src={data.place.pic} className="card-img-top" alt={data.place.name}/>
+                    <div className="card-body">
+                        <h5 className="card-title">{data.place.name}</h5>
+                        <p className="card-text">Rating: None</p>
                     </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Location: {data.place.city}, {data.place.state}</li>
-                    <li class="list-group-item">Cuisines: {data.place.cuisines}</li>
-                    <li class="list-group-item">Comments: No comments yet!</li>
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Location: {data.place.city}, {data.place.state}</li>
+                    <li className="list-group-item">Cuisines: {data.place.cuisines}</li>
+                    <li className="list-group-item">Comments: No comments yet!</li>
                 </ul>
-                <span class="card-body">
-                    <a href={`/places/${data.id}/edit`} class="btn btn-dark">
+                <span className="card-body">
+                    <a href={`/places/${data.id}/edit`} className="btn btn-dark">
                         Edit
                     </a>
                 </span>
@@ -35,3 +35,4 @@ function show (data) {
 }
 
 module.exports = show 
+
