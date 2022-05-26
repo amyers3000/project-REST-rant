@@ -1,19 +1,19 @@
 const React = require('react')
 const Def = require('../default.jsx')
 
-function EditForm (data) {
+function EditForm ({ place }) {
     return (
         <Def>
             <main>
                 <h1>Edit Place</h1>
-                <form method="POST" action={`/places/${data.id}?_method=PUT`}>
+                <form method="POST" action={`/places/${place._id}?_method=PUT`}>
                     <div className='form-group'>
                         <label htmlFor='name'>Place Name</label>
                         <input 
                             className='form-control' 
                             id='name' 
                             name='name' 
-                            value={data.place.name}
+                            value={place.name}
                         required/>
                     </div>
                     <div className='form-group'>
@@ -23,7 +23,7 @@ function EditForm (data) {
                         type='url' 
                         id='pic' 
                         name='pic'
-                        value={data.place.pic}
+                        value={place.pic}
                         />
                     </div>
                     <div className='form-group'>
@@ -32,7 +32,7 @@ function EditForm (data) {
                         className='form-control' 
                         id='city' 
                         name='city'
-                        value={data.place.city}
+                        value={place.city}
                         />
                     </div>
                     <div className='form-group'>
@@ -41,7 +41,7 @@ function EditForm (data) {
                         className='form-control' 
                         id='state' 
                         name='state'
-                        value={data.place.state}
+                        value={place.state}
                         >
                             <option value=''>Select a state...</option>
                             <option value='AL'>Alabama</option>
@@ -103,7 +103,7 @@ function EditForm (data) {
                         className='form-control' 
                         id='cuisines' 
                         name='cuisines' 
-                        value={data.place.cuisines}
+                        value={place.cuisines}
                         required/>
                     </div>
                     <input className='btn  btn-dark button' type='submit' value ='Submit' />
