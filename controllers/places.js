@@ -21,9 +21,16 @@ router.get('/new', (req,res) => {
 
 router.post('/', async (req,res) => {
     try {
-      if(!req.body.image){
-        delete req.body['image']
-    }
+      if(!req.body.pic){
+        delete req.body['pic']
+      }
+      if(!req.body.city){
+        delete req.body['city']
+      }
+      if(!req.body.state){
+        delete req.body['state']
+      }
+
       await db.Place.create(req.body)
       res.redirect('/places')
 

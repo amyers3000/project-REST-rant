@@ -1,9 +1,10 @@
+
 const mongoose = require('mongoose')
 
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  pic: {type: String, default: '/images/first-restaurant.jpg'},
+  pic: {type: String, default: '/images/chia-fruit-drink.jpg'},
   cuisines: { type: String, required: true },
   city: { type: String, default: 'Anytown' },
   state: { type: String, default: 'USA' },

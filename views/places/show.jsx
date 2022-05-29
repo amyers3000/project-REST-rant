@@ -5,7 +5,7 @@ function show ({ place }) {
     return (
         <Def>
             <main>
-                <div className="card mx-auto " style={{width: 500}}>
+                <div className="card mx-auto " style={{width: 600}}>
                     <img src={place.pic} className="card-img-top" alt={place.name}/>
                     <div className="card-body">
                         <h5 className="card-title">{place.name}</h5>

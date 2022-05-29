@@ -23,8 +23,8 @@ function index (data) {
     return (
       <Def>
           <main>
-              <h1 className>Places to Rant and Rave About</h1>
-                <div className='row justify-content-md-center'>
+              <h1>Places to Rant and Rave About</h1>
+                <div className='row justify-content-md-center show-box'>
                 {placesFormatted}
                 </div>
           </main>
