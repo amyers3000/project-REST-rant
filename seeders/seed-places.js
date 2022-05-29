@@ -6,19 +6,21 @@ db.Place.create ([{
     city: 'Seattle',
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
-    pic: '/images/first-restaurant.jpg'
+    pic: '/images/first-restaurant.jpg',
+    founded: 1989
 }, {
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: '/images/second-image.jpg'
+    pic: '/images/second-image.jpg',
+    founded: 2020
 }])
 .then(() => {
     console.log('Success!')
     process.exit()
 })
-.catch(err => {
-    console.log('Failure!', err)
+.catch(error => {
+    console.log('Failure!', error)
     process.exit()
 })

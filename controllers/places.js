@@ -9,7 +9,7 @@ router.get('/', async(req,res) => {
       res.render('places/index', { places } )
 
     } catch (error) {
-      console.log(err)
+      console.log(error)
       res.render('error404')
     }
     
@@ -35,7 +35,7 @@ router.post('/', async (req,res) => {
       res.redirect('/places')
 
     } catch (error) {
-      console.log(err)
+      console.log(error)
       res.render('error404')
     }
 })
@@ -48,7 +48,7 @@ router.get('/:id', async (req, res) => {
    const place = await db.Place.findById(id)
    res.render('places/show', { place })
  } catch (error) {
-  console.log(err)
+  console.log(error)
   res.render('error404')
  }
 })
@@ -58,7 +58,7 @@ router.delete('/:id', async (req, res) => {
     await db.Place.findByIdAndDelete(id)
     res.status(303).redirect('/places')
   } catch (error) {
-    console.log(err)
+    console.log(error)
     res.render('error404')
   }
 
@@ -70,7 +70,7 @@ router.put('/:id', async (req, res) => {
     await db.Place.findByIdAndUpdate(id, req.body)
     res.redirect(`/places/${id}`)
   } catch (error) {
-    console.log(err)
+    console.log(error)
     res.render('error404')
   }
   
@@ -87,7 +87,7 @@ router.get('/:id/edit', async (req, res) => {
       place
     })
   } catch (error) {
-    console.log(err)
+    console.log(error)
     res.render('error404')
   }
 })

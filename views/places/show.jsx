@@ -15,6 +15,7 @@ function show ({ place }) {
                     <li className="list-group-item">Location: {place.city}, {place.state}</li>
                     <li className="list-group-item">Cuisines: {place.cuisines}</li>
                     <li className="list-group-item">Comments: No comments yet!</li>
+                    <li className="list-group-item">{place.showEstablished()}</li>
                 </ul>
                 <span className="card-body">
                     <a href={`/places/${place._id}/edit`} className="btn btn-dark">
