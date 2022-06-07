@@ -30,13 +30,20 @@ function show ({ place }) {
 
     if (place.comments.length) {
         let sumRatings = place.comments.reduce((tot, c) => {
-            return tot + c.stars
+          return tot + c.stars
         }, 0)
-        let averageRating = sumRatings / place.comments.length
+        let averageRating = Math.round(sumRatings / place.comments.length)
+        let stars = ''
+        for (let i = 0; i < averageRating; i++) {
+            stars += '⭐️'
+        }
         rating = (
-            <p className="card-text rating">Rating: {Math.round(averageRating)} Stars</p>
+          <h3>
+            {stars}
+          </h3>
         )
-    }
+      }
+      
     return (
         <Def>
             <main className='show-box'>
