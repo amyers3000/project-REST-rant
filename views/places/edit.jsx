@@ -106,6 +106,16 @@ function EditForm ({ place }) {
                         value={place.cuisines}
                         required/>
                     </div>
+                    <div className="form-group">
+                        <label for="founded">Founded Year</label>
+                        <input
+                        type='number'
+                        className="form-control" 
+                        id="founded" 
+                        name="founded"
+                        value={new Date().getFullYear()}
+                         />
+                    </div>
                     <input className='btn  btn-dark button' type='submit' value ='Submit' />
                 </form>
             </main>
