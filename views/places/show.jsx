@@ -7,6 +7,7 @@ function show ({ place }) {
             No comment yet!
         </h3>
     )
+    
     if (place.comments.length) {
         comments = place.comments.map(c => {
             return(
@@ -21,6 +22,21 @@ function show ({ place }) {
             )
         })
     }
+    let rating = (
+        <h3 className='inactive'>
+            Not yet rated
+        </h3>
+    )
+
+    if (place.comments.length) {
+        let sumRatings = place.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+        let averageRating = sumRatings / place.comments.length
+        rating = (
+            <p className="card-text rating">Rating: {Math.round(averageRating)} Stars</p>
+        )
+    }
     return (
         <Def>
             <main className='show-box'>
@@ -28,7 +44,7 @@ function show ({ place }) {
                     <img src={place.pic} className="card-img-top" alt={place.name}/>
                     <div className="card-body">
                         <h1 className="card-title name">{place.name}</h1>
-                        <p className="card-text">Rating: None</p>
+                        {rating}
                     </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">Location: {place.city}, {place.state}</li>
