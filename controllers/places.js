@@ -50,23 +50,8 @@ router.post('/', async (req,res) => {
     }
 })
 
-router.post('/:id/comment', async(req, res) => {
-  console.log(req.body)
-  const{ id } = req.params
-  if (req.body.author === ''){
-    req.body.author = undefined
-  }
-  req.body.rant = req.body.rant ? true : false
-  try {
-      const place = await db.Place.findById(id)
-      const comment = await db.Comment.create(req.body)
-      place.comments.push(comment.id)
-      place.save()
-      res.redirect(`/places/${req.params.id}`)
-  } catch (error) {
-    res.render('error404')
-  }
-})
+
+
 
 router.get('/:id', async (req, res) => {
  try {
@@ -119,7 +104,32 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
+router.post('/:id/comment', async(req, res) => {
+  console.log(req.body)
+  const{ id } = req.params
+  if (req.body.author === ''){
+    req.body.author = undefined
+  }
+  req.body.rant = req.body.rant ? true : false
+  try {
+      const place = await db.Place.findById(id)
+      const comment = await db.Comment.create(req.body)
+      place.comments.push(comment.id)
+      place.save()
+      res.redirect(`/places/${req.params.id}`)
+  } catch (error) {
+    res.render('error404')
+  }
+})
 
+router.delete('/:id/comment/:commentId', async(req, res) => {
+  try {
+    await db.Comment.findByIdAndDelete(req.params.commentId)
+    res.redirect(`/places/${req.params.id}`)
+  } catch (error) {
+    res.render('error404')
+  }
+})
 
 
 module.exports = router

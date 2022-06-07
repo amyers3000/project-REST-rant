@@ -3,9 +3,7 @@ const Def = require('../default')
 
 function show ({ place }) {
     let comments = (
-        <h3 className='inactive'>
-            No comment yet!
-        </h3>
+        <li className="list-group-item inactive" key='none'> No comment yet!</li>
     )
     
     if (place.comments.length) {
@@ -18,14 +16,17 @@ function show ({ place }) {
                         <strong>- {c.author}</strong>
                     </h4>
                     <h4 className='review'>Rating: {c.stars}</h4>
+                    <form method='POST' action={`/places/${place.id}/comment/${c.id}?_method=DELETE`}>
+                        <input type='submit' className='btn btn-danger' value='Delete'/>
+                    </form>
                 </div>
             )
         })
     }
     let rating = (
-        <h3 className='inactive'>
-            Not yet rated
-        </h3>
+        <p className='inactive card-text'>
+            Not yet rated!
+        </p>
     )
 
     if (place.comments.length) {
@@ -57,7 +58,7 @@ function show ({ place }) {
                     <li className="list-group-item">Location: {place.city}, {place.state}</li>
                     <li className="list-group-item">Cuisines: {place.cuisines}</li>
                     <li className="list-group-item">{place.showEstablished()}</li>
-                    <li className="list-group-item">{comments}</li>
+                    {comments}
                 </ul>
                 <span className="card-body">
                     <div className='btn-group' role='group' aria-label='modify entry'>
