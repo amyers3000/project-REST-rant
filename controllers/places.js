@@ -50,12 +50,29 @@ router.post('/', async (req,res) => {
     }
 })
 
-
+router.post('/:id/comment', async(req, res) => {
+  console.log(req.body)
+  const{ id } = req.params
+  if (req.body.author === ''){
+    req.body.author = undefined
+  }
+  req.body.rant = req.body.rant ? true : false
+  try {
+      const place = await db.Place.findById(id)
+      const comment = await db.Comment.create(req.body)
+      place.comments.push(comment.id)
+      place.save()
+      res.redirect(`/places/${req.params.id}`)
+  } catch (error) {
+    res.render('error404')
+  }
+})
 
 router.get('/:id', async (req, res) => {
  try {
    const { id } = req.params
-   const place = await db.Place.findById(id)
+   const place = await db.Place.findById(id).populate('comments')
+   console.log(place.comments)
    res.render('places/show', { place })
  } catch (error) {
   console.log(error)
