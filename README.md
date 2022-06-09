@@ -2,6 +2,7 @@
 
 REST-Rant is an app where users can review restaurants.
 
+Deployed application: https://rest-rant-review-page.herokuapp.com/
 ## Routes
 
 | Method | Path | Purpose |
